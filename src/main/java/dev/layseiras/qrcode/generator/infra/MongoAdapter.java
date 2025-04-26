@@ -16,12 +16,12 @@ public class MongoAdapter implements MongoPort {
 
     @Override
     public String save(byte[] fileContent, String fileName, String baseAddress) {
-        String publicUrl = "http://localhost:8080/qrcodes/" + fileName;
+        String qrCodeUrl = baseAddress + "/qrcode/" + fileName;
 
-        QrCode qrCode = new QrCode(null, baseAddress, publicUrl);
+        QrCode qrCode = new QrCode(null, baseAddress, qrCodeUrl);
         repository.save(qrCode);
 
-        return publicUrl;
+        return qrCodeUrl;
     }
 }
 

@@ -33,7 +33,7 @@ public class QrCodeGeneratorService {
 
             byte[] pngQrCodeData = pngOutput.toByteArray();
 
-            String url = port.save(pngQrCodeData, UUID.randomUUID().toString(), "image/png");
+            String url = port.save(pngQrCodeData, UUID.randomUUID().toString(), baseAddress);
 
             return new QrCodeDTOResponse(url);
         } catch (WriterException | IOException e) {
