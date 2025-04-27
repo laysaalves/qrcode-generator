@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: qrcode-generator
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: qrcodedb

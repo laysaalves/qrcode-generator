@@ -6,24 +6,24 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "qrcode")
 public class QrCode {
     @Id
-    private Long id;
+    private String id;
 
     private String baseAddress;
     private String qrCodeUrl;
 
     public QrCode(){}
 
-    public QrCode(Long id, String baseAddress, String qrCodeUrl) {
+    public QrCode(String id, String baseAddress, String qrCodeUrl) {
         this.id = id;
         this.baseAddress = baseAddress;
         this.qrCodeUrl = qrCodeUrl;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
