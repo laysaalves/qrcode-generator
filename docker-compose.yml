@@ -1,9 +1,13 @@
+version: "3.8"
+
 services:
   mongo:
     container_name: mongodb
     image: mongo:4
     environment:
-      MONGO_DATA_DIR: /data/db
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: senha
+      MONGO_INITDB_DATABASE: qrcodedb
     ports:
       - '27017:27017'
     volumes:
